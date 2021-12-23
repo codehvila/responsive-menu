@@ -1,3 +1,18 @@
+:root {
+  --link-color: whitesmoke;
+  --link-bg-color-hover: rgb(26, 73, 160);
+
+  --main-bg-color: #fdfdfd;
+  --main-margin-top: 120px;
+  --main-margin-right: 16%;
+  --main-margin-left: 16%;
+  --main-margin-rl: 16%;
+  --main-margin-bottom: 16%;
+
+  --header-bg-color: rgb(124, 156, 189);
+  --header-height: 80px;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -5,39 +20,80 @@
 
 body {
   font-family: sans-serif;
-  padding: 120px 16% 16%;
+  padding: var(--main-margin-top) var(--main-margin-rl)
+    var(--main-margin-bottom);
+  background-color: var(--main-bg-color);
 }
 
 .header {
-  background-color: lightslategrey;
-  height: 80px;
+  background-color: var(--header-bg-color);
+  height: var(--header-height);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav {
   display: flex;
+  width: 100%;
+  max-width: 992px;
+
+  margin: 0 16%;
+  /* padding: 0 16%; padding don't recalculate
+     on resize window, only recalculate with
+     reloading page */
+
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .nav-link {
-  color: whitesmoke;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 .logo {
   font-size: 30px;
   font-weight: bold;
-  /* padding: 0 16%; padding don't recalculate
-     on resize window, only recalculate with
-     reloading page */
-  margin-left: 16%; /* margin recalculate good */
-  line-height: 80px;
+
+  /* line-height: var(--header-height); */
 }
 
 .nav-menu {
   display: flex;
-  margin-right: 16%;
+  list-style: none;
+
+  /* line-height: calc(var(--header-height) + 8px); */
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  margin: 0 0 0 10px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link {
+  padding: 0 3px 2px 1px;
+  border-bottom: 4px solid var(--header-bg-color);
+  transition: 0.3s;
+}
+
+.nav-menu-link:hover {
+  transition: 0.6s;
+  border-bottom: 4px solid var(--link-bg-color-hover);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+.container {
+  max-width: 992px;
 }
