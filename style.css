@@ -16,3 +16,28 @@ body {
   top: 0;
   left: 0;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  /* padding: 0 16%; padding don't recalculate
+     on resize window, only recalculate with
+     reloading page */
+  margin-left: 16%; /* margin recalculate good */
+  line-height: 80px;
+}
+
+.nav-menu {
+  display: flex;
+  margin-right: 16%;
+}
